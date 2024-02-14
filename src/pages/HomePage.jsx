@@ -1,25 +1,25 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import HeroImage from '../assets/img/hero.png';
-import { kelasTerbaru, dataSwiper } from '../data/index';
-import { useNavigate } from 'react-router-dom';
-import Faq from '../components/Faq';
-import { useRef } from 'react';
+import { Container, Row, Col } from "react-bootstrap";
+import HeroImage from "../assets/img/hero.png";
+import { kelasTerbaru, dataSwiper } from "../data/index";
+import { useNavigate } from "react-router-dom";
+import Faq from "../components/Faq";
+import { useRef } from "react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination } from "swiper/modules";
 
 const HomePage = () => {
   const linkRef = useRef(null);
   let Navigate = useNavigate();
 
-  const goto = ref => {
-    window.scrollTo({ top: ref.offsetTop, behavior: 'smooth', left: 0 });
+  const goto = (ref) => {
+    window.scrollTo({ top: ref.offsetTop, behavior: "smooth", left: 0 });
   };
 
   return (
@@ -40,7 +40,7 @@ const HomePage = () => {
               </p>
               <button
                 className="btn btn-danger btn-lg rounded-1 me-2 mb-xs-0 mb-2 animate__animated animate__fadeInUp animate__delay-1s"
-                onClick={() => Navigate('/kelas')}
+                onClick={() => Navigate("/kelas")}
               >
                 Lihat Kelas
               </button>
@@ -77,7 +77,7 @@ const HomePage = () => {
             </Col>
           </Row>
           <Row>
-            {kelasTerbaru.map(kelas => {
+            {kelasTerbaru.map((kelas) => {
               return (
                 <Col
                   key={kelas.id}
@@ -113,11 +113,11 @@ const HomePage = () => {
             <Col className="text-center">
               <button
                 className="btn btn-success rounded-5 btn-lg"
-                onClick={() => Navigate('/kelas')}
+                onClick={() => Navigate("/kelas")}
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                Lihat Semua Kelas{' '}
+                Lihat Semua Kelas{" "}
                 <i className="fa-solid fa-chevron-right ms-1"></i>
               </button>
             </Col>
@@ -159,7 +159,7 @@ const HomePage = () => {
               modules={[Pagination]}
               className="mySwiper"
             >
-              {dataSwiper.map(data => {
+              {dataSwiper.map((data) => {
                 return (
                   <SwiperSlide key={data.id} className="shadow-sm">
                     <p className="desc">{data.desc}</p>
